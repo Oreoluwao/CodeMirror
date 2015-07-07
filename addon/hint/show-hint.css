@@ -19,6 +19,7 @@
 
   max-height: 20em;
   overflow-y: auto;
+  line-height: 1.7;
 }
 
 .CodeMirror-hint {
