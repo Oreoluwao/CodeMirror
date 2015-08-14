@@ -113,7 +113,7 @@
     finishUpdate: function(data, first) {
       this.data = data;
 
-      var picked = (this.widget && this.widget.picked) || (first && this.options.completeSingle);
+      var picked = (this.widget && this.widget.picked);
       if (this.widget) this.widget.close();
       if (data && data.list.length) {
         if (picked && data.list.length == 1) {

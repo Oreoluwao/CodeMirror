@@ -122,12 +122,19 @@ overview.</p>
       "Ctrl-.": function(cm) { server.selectName(cm); }
     })
     editor.on("cursorActivity", function(cm) { server.updateArgHints(cm); });
+    editor.on("inputRead", function(cm) {
+    	var filter = new RegExp('[\.a-z_$]','i');
+    	if(cm.display.input.textarea.value.slice(-1).match(filter)){
+    		server.complete(cm);
+    	}
+    });
   });
 
   var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
     mode: "javascript"
   });
+
 </script>
 
   </article>
